@@ -128,8 +128,7 @@ smallestDivisor n = head [x | x <- [2..n], n `mod` x == 0]
 isPrime :: Integer -> Bool
 isPrime x
   | x < 2 = False
-  | otherwise = d == 1 || d == x
-  where d = smallestDivisor x
+  | otherwise = smallestDivisor x == x
 
 ------------------------------------------------------------------------------
 -- Ex 8: implement a function biggestPrimeAtMost that returns the
