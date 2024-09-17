@@ -38,7 +38,7 @@ myMaximum [] = 0
 myMaximum (x:xs) = foldr maxHelper x xs
 
 maxHelper :: Int -> Int -> Int
-maxHelper a b = max a b
+maxHelper = max
 
 ------------------------------------------------------------------------------
 -- Ex 3: compute the sum and length of a list with a fold. Define
@@ -75,7 +75,7 @@ myConcat xs = foldr concatHelper concatStart xs
 concatStart :: [a]
 concatStart = []
 concatHelper :: [a] -> [a] -> [a]
-concatHelper x acc = x ++ acc
+concatHelper = (++)
 
 ------------------------------------------------------------------------------
 -- Ex 5: get all occurrences of the largest number in a list with a
@@ -125,5 +125,5 @@ myLast :: [a] -> Maybe a
 myLast xs = foldr lastHelper Nothing xs
 
 lastHelper :: a -> Maybe a -> Maybe a
-lastHelper a Nothing = Just a
-lastHelper _ b = b
+lastHelper x Nothing = Just x
+lastHelper _ y = y
