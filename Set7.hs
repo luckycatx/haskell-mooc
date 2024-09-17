@@ -135,7 +135,6 @@ reverseNonEmpty :: NonEmpty a -> NonEmpty a
 reverseNonEmpty (x :| []) = x :| []
 reverseNonEmpty (x :| xs) = last xs :| reverse (init xs) ++ [x]
 
-
 ------------------------------------------------------------------------------
 -- Ex 6: implement Semigroup instances for the Distance, Time and
 -- Velocity types from exercise 1. The instances should perform
